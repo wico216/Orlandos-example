@@ -21,7 +21,12 @@ namespace Orlandos_example
             new Product(4, "Product4", "This is my Product", 2.23, 18.99)
          };
 
-        List<CartItem> _cartitem = new List<CartItem>();
+        List<CartItem> _cartitem = new List<CartItem>()
+        {
+            new CartItem(1,1,2.5,6),
+             new CartItem(2,3,2.5,6)
+        };
+
         //Category Categoryt1 = new Category(1, "iPhone");
         //Category Categoryt2 = new Category(2, "Samsung");
         //Category Categoryt3 = new Category(3, "BlackBerry");
@@ -56,21 +61,21 @@ namespace Orlandos_example
 
         }
 
-        public void AddToCart(string ProductName)
+        public void AddToCart(Product item, int Qty)
         {
-            _cartitem.Add(Product)
+            _cartitem.Add(new CartItem(item.ProductId,Qty,0.00,(item.ProductPrice*Qty)));
         }
 
-        public void RemoveFromCart(int ProductID)
+        public void RemoveFromCart(int ProductRow)
         {
-            Cart.RemoveAt(ProductID);
+            _cartitem.RemoveAt(ProductRow - 1);
         }
 
         public void ShowCart()
         {
-            for (int i = 0; i < Cart.Count; i++)
+            for (int i = 0; i < _cartitem.Count; i++)
             {
-                Console.WriteLine(Cart[i]);
+                Console.WriteLine(_cartitem[i].ProductID);
             }
         }
     }

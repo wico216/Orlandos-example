@@ -13,6 +13,9 @@ namespace Orlandos_example
             Shopping_Cart Store = new Shopping_Cart();
             Store.ShowCategories();
             Store.ShowProducts();
+            Store.ShowCart();
+            Store.RemoveFromCart(1);
+            Store.ShowCart();
             
             Console.ReadLine();
         }
