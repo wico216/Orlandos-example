@@ -10,6 +10,12 @@ namespace Orlandos_example
     {
         static void Main(string[] args)
         {
+            Shopping_Cart Store = new Shopping_Cart();
+            Store.ShowCategories();
+            Store.ShowProducts();
+            
+            Console.ReadLine();
         }
     }
 }
+ 
