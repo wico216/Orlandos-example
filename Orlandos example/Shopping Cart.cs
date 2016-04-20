@@ -8,17 +8,17 @@ namespace Orlandos_example
 
         List<Category> _category = new List<Orlandos_example.Category>()
         {
-            new Category(1, "iPhone"),
-            new Category(2, "Samsung"),
-            new Category(3, "BlackBerry"),
-            new Category(4, "Nokia")
+            new Category(0, "iPhone"),
+            new Category(1, "Samsung"),
+            new Category(2, "BlackBerry"),
+            new Category(3, "Nokia")
          };
 
         List<Product> _product = new List<Orlandos_example.Product>() {
-            new Product(1,"Product1","This is my Product",5.23, 14.99),
-            new Product(2, "Product2", "This is my Product", 4.23, 16.99),
-            new Product(3, "Product3", "This is my Product", 5.23, 17.99),
-            new Product(4, "Product4", "This is my Product", 2.23, 18.99)
+            new Product(0,"Product1","This is my Product",5.23, 14.99),
+            new Product(1, "Product2", "This is my Product", 4.23, 16.99),
+            new Product(2, "Product3", "This is my Product", 5.23, 17.99),
+            new Product(3, "Product4", "This is my Product", 2.23, 18.99)
          };
 
         List<CartItem> _cartitem = new List<CartItem>()
@@ -61,9 +61,12 @@ namespace Orlandos_example
 
         }
 
-        public void AddToCart(Product item, int Qty)
+        public void AddToCart(int id, int Qty)
         {
-            _cartitem.Add(new CartItem(item.ProductId,Qty,0.00,(item.ProductPrice*Qty)));
+            _cartitem.Add(new CartItem(_product[id].ProductId, Qty, 0.00, (_product[id].ProductPrice * Qty)));
+
+            //_product.Find(item.ProductId)
+            //_cartitem.Add(new CartItem(item.ProductId,Qty,0.00,(item.ProductPrice*Qty)));
         }
 
         public void RemoveFromCart(int ProductRow)

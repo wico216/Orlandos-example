@@ -16,6 +16,8 @@ namespace Orlandos_example
             Store.ShowCart();
             Store.RemoveFromCart(1);
             Store.ShowCart();
+            Store.AddToCart(3, 3);
+            Store.ShowCart();
             
             Console.ReadLine();
         }
