@@ -27,6 +27,8 @@ namespace Orlandos_example
              new CartItem(2,3,2.5,6)
         };
 
+        
+
         //Category Categoryt1 = new Category(1, "iPhone");
         //Category Categoryt2 = new Category(2, "Samsung");
         //Category Categoryt3 = new Category(3, "BlackBerry");
@@ -76,9 +78,10 @@ namespace Orlandos_example
 
         public void ShowCart()
         {
-            for (int i = 0; i < _cartitem.Count; i++)
+            foreach (var item in _cartitem)
             {
-                Console.WriteLine(_cartitem[i].ProductID);
+                
+                Console.WriteLine(item.ProductID);
             }
         }
     }

@@ -8,16 +8,16 @@ namespace Orlandos_example
 {
     class CartItem
     {
-        public int ProductID;
+        public int ProductID { get; private set; }
         public int Quantity;
         public double Tax;
         public double Subtotal;
 
-        public CartItem(int ID, int Qty, double pTax ,double pSubtotal)
+        public CartItem(int id, int Qty, double tax ,double pSubtotal)
         {
-            ProductID = ID;
+            ProductID = id;
             Quantity = Qty;
-            Tax = pTax;
+            Tax = tax;
             Subtotal = pSubtotal;
         }      
     }
